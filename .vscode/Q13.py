@@ -1,10 +1,11 @@
 def is_palindrome(text):
-    text=text.lower()
-    for char in text:
-        if text==text[::-1]:
-         return"String is a palindrome"
-        else:
-           return"String is not a palindrome"
+
+   cleaned_text="".join(char for char in text if char.isalnum()).upper()
+   if cleaned_text==cleaned_text[::-1]:
+         return f"{text} is a palindrome"
+   else:
+           return f"{text} is not a palindrome"
         
-print(is_palindrome("Alyla"))
+input_text="A man, A plan, a canal, Panama"
+print(is_palindrome(input_text))
 
